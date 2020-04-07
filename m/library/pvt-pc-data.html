@@ -7,7 +7,7 @@
       VmInclude:__COMPONENT__/g/grid.01.js
       VmInclude:__CURRENT_PATH__/shared-data.js
       //-------------------------------------
-      $('#title__ID').text('PC PVT Upload file and read')
+      $('#title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name);
       //-------------------------------------
       var fields="File_Name,PVTDate,PVTTime,ISIMin,ISIMax,DUR,Lapse,MOODPre,MOODPost,Mouse_Button,Software,CORR,MRT,SDRT,MedRT,MinRT,MaxRT,MRRT,SDRRT,LAPS,TTLAPS,TE,RTLT100,FS,KHGT3,RTGT30,Distrib_Asym,MeanFRT,SDFRT,MeanSRT,SDSRT";
       m.fields="_Form,_Status,_Notes,_Participant_ID,Participant,"+fields+",Submit_date,Submitted_by,_Delete";
