@@ -55,6 +55,8 @@
 
         "be-visit-date-data-schizophrenia":             {url:"$H/m/library/date-data.html",Table:"be-visit-date-schizophrenia",form_module:"be-visit-date-form-schizophrenia",task_name:"Baseline evening - Visit Date"},
         "be-visit-date-form-schizophrenia":             {url:"$H/m/library/date-form.html",Table:"be-visit-date-schizophrenia",task_name:"Baseline evening - Visit Date"},
+        "be-anthropometry-short-data-schizophrenia":           {url:"$H/m/library/anthropometry-short-data.html",Table:"be-anthropometry-short-schizophrenia",form_module:"be-anthropometry-short-form-schizophrenia",task_name:"Baseline - Anthropometry"},
+        "be-anthropometry-short-form-schizophrenia":           {url:"$H/m/library/anthropometry-short-form.html",Table:"be-anthropometry-short-schizophrenia",task_name:"Baseline - Anthropometry"},
         "be-pvt-data-schizophrenia":                    {url:"$H/m/library/pvt-data.html",Table:"be-pvt-schizophrenia",form_module:"be-pvt-form-schizophrenia",task_name:"Baseline evening - PVT"},
         "be-pvt-form-schizophrenia":                    {url:"$H/m/library/pvt-form.html",Table:"be-pvt-schizophrenia",task_name:"Baseline evening - PVT"},
         "be-pvt-pc-data-schizophrenia":                 {url:"$H/m/library/pvt-pc-data.html",Table:"be-pvt-pc-schizophrenia",form_module:"be-pvt-pc-form-schizophrenia",task_name:"Baseline evening - PC PVT"},
@@ -116,8 +118,8 @@
 
         "fe-visit-date-data-schizophrenia":             {url:"$H/m/library/date-data.html",Table:"fe-visit-date-schizophrenia",form_module:"fe-visit-date-form-schizophrenia",task_name:"Follow Up evening - Visit Date"},
         "fe-visit-date-form-schizophrenia":             {url:"$H/m/library/date-form.html",Table:"fe-visit-date-schizophrenia",task_name:"Follow Up evening - Visit Date"},
-        "fe-anthropometry-data-schizophrenia":           {url:"$H/m/library/anthropometry-data.html",Table:"fe-anthropometry-schizophrenia",form_module:"fe-anthropometry-form-schizophrenia",task_name:"Follow Up evening - Anthropometry"},
-        "fe-anthropometry-form-schizophrenia":           {url:"$H/m/library/anthropometry-form.html",Table:"fe-anthropometry-schizophrenia",task_name:"Follow Up evening - Anthropometry"},
+        "fe-anthropometry-short-data-schizophrenia":           {url:"$H/m/library/anthropometry-short-data.html",Table:"fe-anthropometry-short-schizophrenia",form_module:"fe-anthropometry-short-form-schizophrenia",task_name:"Follow Up evening - Anthropometry"},
+        "fe-anthropometry-short-form-schizophrenia":           {url:"$H/m/library/anthropometry-short-form.html",Table:"fe-anthropometry-short-schizophrenia",task_name:"Follow Up evening - Anthropometry"},
         "fe-pvt-data-schizophrenia":                    {url:"$H/m/library/pvt-data.html",Table:"fe-pvt-schizophrenia",form_module:"fe-pvt-form-schizophrenia",task_name:"Follow Up evening - PVT"},
         "fe-pvt-form-schizophrenia":                    {url:"$H/m/library/pvt-form.html",Table:"fe-pvt-schizophrenia",task_name:"Follow Up evening - PVT"},
         "fe-pvt-pc-data-schizophrenia":                 {url:"$H/m/library/pvt-pc-data.html",Table:"fe-pvt-pc-schizophrenia",form_module:"fe-pvt-pc-form-schizophrenia",task_name:"Follow Up evening - PC PVT"},
