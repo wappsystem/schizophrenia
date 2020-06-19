@@ -185,9 +185,9 @@
         $vm.hosting_path=$vm.hosting_path.replace('online-questionnaire','')
         $vm.module_list[p].url=$vm.module_list[p].url.replace('$H',$vm.hosting_path);
     }
-//    if(window.location.toString().indexOf('tb=demo')!=-1){
+    if(window.location.toString().indexOf('tb=demo')!=-1){
         for(p in $vm.module_list){
             $vm.module_list[p].Table="demo-"+$vm.module_list[p].Table;
         }
-//    }
+    }
 })();
