@@ -101,7 +101,7 @@
                     <div class="questiongroup ">
                         <fieldset class="">
                            <label ><span class=""></span>
-                               <input class="form-control" type="number" min=1930 max=2030 name="smoke_stop" id=smoke_stop__ID placeholder="" >
+                               <input class="form-control" type="text" name="smoke_stop" id=smoke_stop__ID placeholder="" >
                            </label><br>
                          </fieldset>
                      </div>
@@ -319,7 +319,7 @@
               $('#regular_smoke__ID').show() ;
               $('#stopped_smoke__ID').show() ;
               $('#smoke_regular__ID').prop('required', true);
-              //$('#smoke_stop__ID').prop('required', true);
+              $('#smoke_stop__ID').prop('required', true);
               if($("input[name='smoke_regular']:checked").val()=='1'){
                   $('#first_smoke__ID').show();
                   $('#number_smoke__ID').show();
@@ -333,7 +333,7 @@
               $('#first_smoke__ID').prop('style','display:none!important');
               $('#number_smoke__ID').prop('style','display:none!important');
               $('#smoke_regular__ID').prop('required',false);
-              //$('#smoke_stop__ID').prop('required',false);
+              $('#smoke_stop__ID').prop('required',false);
               $('#smoke_age__ID').prop('required',false);
               $('#smoke_per_day__ID').prop('required',false);
           }
@@ -376,7 +376,7 @@
               $('#regular_smoke__ID').show() ;
               $('#stopped_smoke__ID').show() ;
               $('#smoke_regular__ID').prop('required', true);
-              //$('#smoke_stop__ID').prop('required', true);
+              $('#smoke_stop__ID').prop('required', true);
               if($("input[name='smoke_regular']:checked").val()=='1'){
                   $('#first_smoke__ID').show();
                   $('#number_smoke__ID').show();
@@ -396,7 +396,7 @@
               $('#first_smoke__ID').prop('style','display:none!important');
               $('#number_smoke__ID').prop('style','display:none!important');
               $('#smoke_regular__ID').prop('required',false);
-              //$('#smoke_stop__ID').prop('required',false);
+              $('#smoke_stop__ID').prop('required',false);
               $('#smoke_age__ID').prop('required',false);
               $('#smoke_per_day__ID').prop('required',false);
           }
