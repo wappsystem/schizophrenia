@@ -93,9 +93,9 @@
         "bm-word-pairs-set2-data-schizophrenia":		{url:"$H/m/library/word-pairs-data.html",Table:"bm-word-pairs-set2-schizophrenia",form_module:"bm-word-pairs-set2-form-schizophrenia",task_name:"Baseline - Word Pair Set 2"},
         "bm-word-pairs-set2-form-schizophrenia":		{url:"$H/m/library/word-pairs-form.html",Table:"bm-word-pairs-set2-schizophrenia",task_name:"Baseline - Word Pair Set 2"},
         "bm-finger-tapping6-after-data-schizophrenia": {url:"$H/m/neurocog/finger-tapping6-after-data.html",Table:"bm-finger-tapping6-schizophrenia",form_module:"bm-finger-tapping6-after-form-schizophrenia",task_name:"Baseline morning - Finger Tapping 4-1-3-2-4"},
-        "bm-finger-tapping6-after-form-schizophrenia": {url:"$H/m/neurocog/finger-tapping6-after-form.html",Table:"bm-finger-tapping6-schizophrenia",task_name:"Baseline morning - Finger Tapping 4-1-3-2-4"},
+        "bm-finger-tapping6-after-form-schizophrenia": {url:"$H/m/neurocog/finger-tapping6-after-form.html",Table:"bm-finger-tapping6-schizophrenia",Table2:"be-finger-tapping12-schizophrenia",task_name:"Baseline morning - Finger Tapping 4-1-3-2-4"},
         "bm-finger-tapping6-alt-data-schizophrenia":    {url:"$H/m/neurocog/finger-tapping6-after-data.html",Table:"bm-finger-tapping6-alt-schizophrenia",form_module:"bm-finger-tapping6-alt-form-schizophrenia",task_name:"Baseline morning - Finger Tapping 1-4-2-3-1"},
-        "bm-finger-tapping6-alt-form-schizophrenia":    {url:"$H/m/neurocog/finger-tapping6-alt-form.html",Table:"bm-finger-tapping6-alt-schizophrenia",task_name:"Baseline morning - Finger Tapping 1-4-2-3-1"},
+        "bm-finger-tapping6-alt-form-schizophrenia":    {url:"$H/m/neurocog/finger-tapping6-alt-form.html",Table:"bm-finger-tapping6-alt-schizophrenia",Table2:"be-finger-tapping12-alt-schizophrenia",task_name:"Baseline morning - Finger Tapping 1-4-2-3-1"},
         "bm-kss-data-schizophrenia":                    {url:"$H/m/library/kss-data.html",Table:"bm-kss-schizophrenia",form_module:"bm-kss-form-schizophrenia",task_name:"Baseline morning - KSS"},
         "bm-kss-form-schizophrenia":                    {url:"$H/m/library/kss-form.html",Table:"bm-kss-schizophrenia",task_name:"Baseline morning - KSS"},
 

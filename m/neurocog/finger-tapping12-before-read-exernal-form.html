@@ -1,0 +1,306 @@
+<div id=thirdparty_container__ID>
+	<div id=instructions__ID style="margin: auto; text-align:center;">
+		<div class="col-12 col-lg-12 col-md-12 col-sm-12 mx-auto formbox ">
+				<div class="row">
+					<div class="col-12">
+					<!-- form start -->
+					<form id="F__ID">
+						<!-- participant name and study id -->
+						<div id="participant_div__ID">
+							<div class="form-group">
+								<fieldset class="subquestions">
+									<label ><span class="">Participant</span>
+										<input type=text name="Participant" class=form-control id=Participant__ID data-id="Participant"/>
+									</label><br>
+									<label ><span class="">Participant ID</span>
+										<input type=text name="Participant_uid" class=form-control readonly />
+									</label>
+								</fieldset>
+							</div>
+						</div>
+					</form>
+					</div>
+				</div>
+			</div>
+		<div style='margin-top:50px; font-size:x-large; color:rgba(0,0,255,255)'>Using your non-dominant hand on the numeric keyboard, repeatedly tap the five element sequence shown</div>
+		<div style='font-size:x-large; font-weight:bold; color:rgba(0,0,255,255)'>as quickly and accurately as possible</div>
+		<button id=start_button__ID style="margin-top:20px;" class='btn btn-primary btn-lg'>Start</button>
+	</div>
+	<canvas id=main_canvas__ID width=1100 height=300 style="margin: auto; display: block;"></canvas>
+</div>
+<script>
+	function F__ID(){
+		// Ver. 17/10/2019
+		//-------------------------------------
+		VmInclude:__COMPONENT__/f/form.01.js
+		VmInclude:__CURRENT_PATH__/../../library/shared-form.js
+		//-------------------------------------
+		$('#header_0').hide();
+		$('body').css('background','white');
+		var intervals = [];
+		//------------------------------------
+		var this_module=$vm.module_list[$vm.vm['__ID'].name];
+		//------------------------------------
+		$('#D__ID').on('load',function(){
+			$('#header').hide();
+			$('#footer').hide();
+			$('#participant_div__ID').hide()
+			$('#thirdparty_container__ID').css('height',$vm.min_height);
+			//third_party("thirdparty_container__ID",data_process);
+			$('input[name=Participant]').val("JS")
+			$("input[name='Participant_uid']").val("2")
+			var data = {
+				Match : [],
+				Tapping_Time : [],
+				Sequence_Number : []
+			};
+
+			data_process(data);
+
+		})
+		//------------------------------------
+		var calc=function(data){
+			var a="3964,303,1678,318,831,1130,773,708,339,411,735,370,2127,497,453,1058,503,1345,474,516,937,511,1514,477,495,686,572,881,634,553,542,610,1081,647,635,4250,419,510,328,426,511,391,1149,319,988,392,370,443,328,443,588,319,458,416,510,583,411,505,476,525,583,490,573,364,433,527,438,500,609,551,1567,563,568,443,557,849,569,598,647,493,547,1599,388,536,348,490,782,390,480,407,509,1577,397,459,421,651,1150,371,490,345,534,724,417,479,391,354,942,355,489,360,417,588,380,489,360,444,718,361,442,416,495,937,386,494,469,531,719,437,464,371,509,484,454,479,406,494,851,496,1124,365,431,698,339,598,412,495,631,364,411,386,432,573,397,447,355,442,579,379,428,400,511,640,417,416,371,441,706,431,431,339,474,626,417,431,401,557,756,588,615,932,462,893,488,923,432,572,785,413,510,486,484,812,1978,441,485,383,526,767,391,448,391,551,677,369,459,500,469,969,400,449,401,432,683,421,447,339,614,916,412,433,440,603,1065,459,449,422,618,1021,423,453,448,822,942,425,524,549,546,1005,454,483,447,578,943,1105,401,511,375,458,392,380,711,331,505,687,369,475,1343,505,772,327,375,416,356,458,345,441,307,458,718,354,490,313,550,490,370,510,345,411,540,382,395,324,551,568,344,380,338,491,623,325,358,323,426,605,301,396,334,442,705,400,464,423,431,729,479,438,567,395,435,322,363,465,324,426,276,516,474,323,442,324,393,418,354,427,448,406,480,354,416,355,411,527,327,411,370,402,541,390,434,337,427,557,395,404,362,513,483,328,504,299,421,390,365,443,359,411,402,401,589,286,406,447,324,395,465,431,609,379,372,380,557,859,354,630,364,388,604,325,707,308,348,521,297,395,386,381,510,344,379,339,318,380,301,429,322,303,363,302,470,328,334,316,366,551,350,397,321,364,397,339,395,370,316,397,324,500,426,356,363,333,397,448,369,370,348,427,468,434,370,337,364,413,511,484,391,415,386,495,385,356,331,400,396,481,311,380,415,397,340,348,332,433,318,849,340,490,297,437,437,372,383,319,364,426,308,411,308,364,460,280,375,287,318,365,317,348,350,348,323,312,334,364,427,406,303,380,276,375,323,312,319,301,360,375,311,380,324,348,334,333,364,303,428,306,319,375,322,335,269,375,380,370,427,360,302,443,324,332,333,335,332,333,365,286,397,676,354,432,401,307,455,327,380,396,416,1223,316,379,353,366,322,328,412,322,351,348,317,396,307,350,380,301,428,322,351,384,318,489,328,443,402,306,405,308,444,358,350,380,333,412,384,324,348,366,333,426,386,401,338,396,308,280,365,380,365,416,401,323,459,635,390,318,444,618,850,370,473,1888,867,603,398,837,429,586,353,787,314,473,392,473,389,386,364,464,339,385,334,426,407,379,386,333,365,447,1010,315,519,471,1574,319,350,317,365,380,308,329,302,364,302,333,349,396,339,317,364,412,323,365,323,298,379,318,302,317,349,598,1817,414,368,319,364,302,429,414,371,323,469,484,375,444,328,474,741,377,384,353,365,370,303,391,305,350,380,364,370,286,380,543,516,500,422,634,1243,347,348,318,660,604,2128,415,370,370,380,277,312,301,329,323,328,395,262,327,333,349,366,274,408,368,317,381,302,349,308,328,380,277,390,384,334,364,417,448,1134,357,301,485,469,375,363,402,260,392"
+			var b="M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,N,N,N,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,N,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,M,N,N,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,N,N,N,N,N,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,N,M,M,M,M,M,M,M,N,N,N,N,M,N,N,N,N,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,N,N,N,N,N,M,M,M,M,M,N,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M"
+			var c="1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12"
+			data.Tapping_Time=a;
+			data.Match=b;
+			data.Sequence_Number=c;
+			var tt=data.Tapping_Time.split(',');
+            var m=data.Match.split(',');
+            var sn=data.Sequence_Number.split(',');
+			var k=0;
+                    var check=true;
+                    var group=0;
+                    var timing=0;
+                    var correct=[];
+                    var error=[];
+                    var time=[];
+                    var pos=0;
+                    for (var i=1;i<13;i++) {
+                        var r_sn = sn.filter(pp => pp ==i);
+                        //r_sn=sn.slice(pos,pos+parseInt(r_sn.length/5)*5);
+                        var r_tt=tt.slice(pos,pos+parseInt(r_sn.length));
+                        var r_m=m.slice(pos,pos+parseInt(r_sn.length));
+                        var err=0;
+                        var cor=0;
+                        var tim=0;
+                        for(var j=0;j<parseInt(r_sn.length);j++){
+                            var rr_m=r_m.slice(j,(j+1));
+                            var rr_tt=r_tt.slice(j,(j+1));
+                            var c=rr_m.filter(pp => pp =='N')
+                            if(c.length>0) err++;
+                            else {
+                                cor++;
+                                tim+=parseInt(rr_tt);
+                            }
+                        }
+                        error.push(err);
+                        correct.push(cor);
+                        time.push((tim/cor/1000).toFixed(2));
+                        pos+=r_sn.length;
+                    }
+                    data.Correct_1=correct[0];data.Error_1=error[0];data.Time_1=time[0];
+                    data.Correct_2=correct[1];data.Error_2=error[1];data.Time_2=time[1];
+                    data.Correct_3=correct[2];data.Error_3=error[2];data.Time_3=time[2];
+                    data.Correct_4=correct[3];data.Error_4=error[3];data.Time_4=time[3];
+                    data.Correct_5=correct[4];data.Error_5=error[4];data.Time_5=time[4];
+                    data.Correct_6=correct[5];data.Error_6=error[5];data.Time_6=time[5];
+                    data.Correct_7=correct[6];data.Error_7=error[6];data.Time_7=time[6];
+                    data.Correct_8=correct[7];data.Error_8=error[7];data.Time_8=time[7];
+                    data.Correct_9=correct[8];data.Error_9=error[8];data.Time_9=time[8];
+                    data.Correct_10=correct[9];data.Error_10=error[9];data.Time_10=time[9];
+                    data.Correct_11=correct[10];data.Error_11=error[10];data.Time_11=time[10];
+					data.Correct_12=correct[11];data.Error_12=error[11];data.Time_12=time[11];
+					data.PreTLS=((parseInt(correct[0])+parseInt(correct[1])+parseInt(correct[2]))/3).toFixed(1);
+					data.PoTLS=((parseInt(correct[9])+parseInt(correct[10])+parseInt(correct[11]))/3).toFixed(1);
+					data.PreTES=((parseInt(error[0])+parseInt(error[1])+parseInt(error[2]))/3).toFixed(1);
+					data.PoTES=((parseInt(error[9])+parseInt(error[10])+parseInt(error[11]))/3).toFixed(1);
+					data.PreTRT=((parseFloat(time[0])+parseFloat(time[1])+parseFloat(time[2]))/3).toFixed(2);
+					data.PoTRT=((parseFloat(time[9])+parseFloat(time[10])+parseFloat(time[11]))/3).toFixed(2);
+		}
+		//------------------------------------
+		var ClearIntervals = function()
+		{
+			for (var i=0; i<intervals.lenght; i++)
+			{
+				clearTimeout(intervals[i]);
+			}
+			intervals = [];
+		}
+		//------------------------------------
+		$('#D__ID').on('unload',function(){
+			//alert('unload');
+			ClearIntervals();
+		})
+		//------------------------------------
+		var data_process=function(data){
+			//alert(JSON.stringify(data));
+			calc(data);
+			data.Participant=$('#Participant__ID').val();
+			data.Participant_uid=$("input[name='Participant_uid']").val();
+			data.sysStatus='#00FF00';
+			$vm.request({cmd:"insert",table:m.Table,data:data},function(res){
+				if(res.status=="np"){
+					alert("No permission to insert a new record in to the database.");
+					if(m.input.goback!=undefined){
+						$vm.refresh=1;
+						window.history.go(-1);       //from grid
+					}
+					return;
+				}
+				else { 
+					$vm.refresh=1;
+					window.history.go(-1);
+				}
+			});
+		}
+		//------------------------------------
+		var third_party=function(containerID,callback){
+			$('#instructions__ID').show();
+			ClearIntervals();
+			$('#'+containerID).css('background-color','#ffffff');
+			var canvas = document.getElementById('main_canvas__ID');
+			var ctx = canvas.getContext('2d');
+			var repeats = 12;
+			var predelaytime = 5000;
+			var predelaytext = "Please be ready. The task will start shortly.";
+			var postdelaytime = 25000;
+			var postdelaytext = "Relax for a while.";
+			var timelimit = 30000;
+			//var cleardelaytime=50;
+			var repeat = 0
+
+			var sequence = ['4', '1', '3', '2', '4'];
+			var currentSequence = 0;
+			var currentNumber = 0;
+
+			var startTime;
+
+			var width = canvas.width;
+			var height = canvas.height;
+			var midX = width / 2;
+			var midY = height / 2;
+
+			var separation = 60;
+
+			var results = {
+				Match : [],
+				Tapping_Time : [],
+				Sequence_Number : []
+			};
+
+			var sequenceMatch = null;
+
+			var repeatResults = {};
+			ctx.clearRect(0, 0, width, height);
+			ctx.fillStyle = 'rgb(0,0,255)';
+			ctx.textAlign = 'center';
+			ctx.font = '48px arial';
+
+			$(document).keypress(function(e){
+				if ($("#main_canvas__ID").is(':hidden')) //hacky and ugly way :(
+					return;
+				if (currentSequence > 0 && currentNumber < sequence.length)
+				{
+					if (sequence[currentNumber] == e.key)
+					{
+						if (sequenceMatch != 'N')
+							sequenceMatch = 'M';
+					}
+					else
+					{
+						sequenceMatch = 'N';
+					}
+					var left = midX - (separation * sequence.length) / 2;
+					var x = left + currentNumber * separation;
+					ctx.fillStyle = 'rgb(0,0,102)';
+						ctx.beginPath();
+					ctx.arc(x, midY + separation / 2, 20, 0, 2*Math.PI);
+					ctx.fill();
+					currentNumber++;
+
+					if (currentNumber >= sequence.length)
+					{
+						results.Match.push(sequenceMatch);
+						results.Tapping_Time.push(Date.now() - startTime);
+						results.Sequence_Number.push(repeat);
+						ResetSequence();
+					}
+				}
+				e.preventDefault();
+			});
+
+			var ResetSequence = function()
+			{
+				if ($("#main_canvas__ID").is(':hidden')) //hacky and ugly way :(
+					return;
+				ctx.clearRect(0, 0, width, height);
+				ctx.fillStyle = 'rgb(0,0,102)';
+				ctx.font = '64px arial';
+				var left = midX - (separation * sequence.length) / 2;
+				for (var i=0; i<sequence.length; i++)
+				{
+					var x = left + i * separation;
+					ctx.fillText(sequence[i], x, midY - separation / 2);
+				}
+				startTime = Date.now();
+				currentNumber = 0;
+				currentSequence++;
+				sequenceMatch = null;
+			}
+
+			var Start = function()
+			{
+				if ($("#main_canvas__ID").is(':hidden')) //hacky and ugly way :(
+					return;
+				repeat++;
+				ctx.clearRect(0, 0, width, height);
+				ctx.fillStyle = 'rgb(0,0,255)';
+				ctx.font = '48px arial';
+				ctx.fillText(predelaytext, midX, midY);
+				intervals.push(setTimeout(ResetSequence, predelaytime));
+				intervals.push(setTimeout(Finish, predelaytime + timelimit));
+			}
+			var Finish = function()
+			{
+				if ($("#main_canvas__ID").is(':hidden')) //hacky and ugly way :(
+					return;
+				currentSequence = 0;
+				ctx.clearRect(0, 0, width, height);
+				if (repeat < repeats)
+				{
+					ctx.fillStyle = 'rgb(0,0,255)';
+					ctx.font = '48px arial';
+					ctx.fillText(postdelaytext, midX, midY);
+					intervals.push(setTimeout(Start, postdelaytime));
+				}
+				else
+				{
+					results.Match = results.Match.join(",");
+					results.Tapping_Time = results.Tapping_Time.join(",");
+					results.Sequence_Number = results.Sequence_Number.join(",");
+					callback(results);
+				}
+			}
+
+			$('#start_button__ID').on('click',function(){
+				$('#instructions__ID').hide();
+				$('#participant_div__ID').css("visibility", "hidden");
+				Start();
+			});
+			//------------------------------------
+		}
+		//------------------------------------
+	}
+</script>
+<style>
+	#D__ID{
+		height:100%;
+		overflow:auto;
+		animation: vm_module_fadein 1.0s;
+	}
+	#thirdparty_container__ID{
+		overflow: hidden;
+	}
+</style>
