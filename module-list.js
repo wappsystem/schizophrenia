@@ -99,8 +99,8 @@
         "bm-kss-data-schizophrenia":                    {url:"$H/m/library/kss-data.html",Table:"bm-kss-schizophrenia",form_module:"bm-kss-form-schizophrenia",task_name:"Baseline morning - KSS"},
         "bm-kss-form-schizophrenia":                    {url:"$H/m/library/kss-form.html",Table:"bm-kss-schizophrenia",task_name:"Baseline morning - KSS"},
 
-        "bg-psg300-data-schizophrenia":		                {url:"$H/m/library/psg300-data.html",Table:"bg-psg300-schizophrenia",form_module:"bg-psg300-form-schizophrenia",task_name:"Baseline General - PSG300"},
-        "bg-psg300-form-schizophrenia":		                {url:"$H/m/library/psg300-form.html",Table:"bg-psg300-schizophrenia",task_name:"Baseline General - PSG300"},
+        "bg-psggrr-data-schizophrenia":		                {url:"$H/m/library/psggrr-data.html",Table:"bg-psggrr-schizophrenia",form_module:"bg-psggrr-form-schizophrenia",task_name:"Baseline General - Grael Research PSG Report"},
+        "bg-psggrr-form-schizophrenia":		                {url:"$H/m/library/psggrr-form.html",Table:"bg-psggrr-schizophrenia",task_name:"Baseline General - Grael Research PSG Report"},
         "bg-psgedf-data-schizophrenia":		                {url:"$H/m/library/upload-file-data.html",Table:"bg-psgedf-schizophrenia",form_module:"bg-psgedf-form-schizophrenia",task_name:"Baseline General - PSG EDF"},
         "bg-psgedf-form-schizophrenia":		                {url:"$H/m/library/upload-file-form.html",Table:"bg-psgedf-schizophrenia",task_name:"Baseline General - PSG EDF"},
         "bg-sleep-scoring-data-schizophrenia":		                {url:"$H/m/library/upload-file-data.html",Table:"bg-sleep-scoring-schizophrenia",form_module:"bg-sleep-scoring-form-schizophrenia",task_name:"Baseline General - Sleep Scoring"},
@@ -162,8 +162,8 @@
         "fm-kss-data-schizophrenia":                    {url:"$H/m/library/kss-data.html",Table:"fm-kss-schizophrenia",form_module:"fm-kss-form-schizophrenia",task_name:"Follow Up morning - KSS"},
         "fm-kss-form-schizophrenia":                    {url:"$H/m/library/kss-form.html",Table:"fm-kss-schizophrenia",task_name:"Follow Up morning - KSS"},
 
-        "fg-psg300-data-schizophrenia":		                {url:"$H/m/library/psg300-data.html",Table:"fg-psg300-schizophrenia",form_module:"fg-psg300-form-schizophrenia",task_name:"Follow Up General - PSG300"},
-        "fg-psg300-form-schizophrenia":		                {url:"$H/m/library/psg300-form.html",Table:"fg-psg300-schizophrenia",task_name:"Follow Up General - PSG300"},
+        "fg-psggrr-data-schizophrenia":		                {url:"$H/m/library/psggrr-data.html",Table:"fg-psggrr-schizophrenia",form_module:"fg-psggrr-form-schizophrenia",task_name:"Follow Up General - Grael Research PSG Report"},
+        "fg-psggrr-form-schizophrenia":		                {url:"$H/m/library/psggrr-form.html",Table:"fg-psggrr-schizophrenia",task_name:"Follow Up General - Grael Research PSG Report"},
         "fg-psgedf-data-schizophrenia":		                {url:"$H/m/library/upload-file-data.html",Table:"fg-psgedf-schizophrenia",form_module:"fg-psgedf-form-schizophrenia",task_name:"Follow Up General - PSG EDF"},
         "fg-psgedf-form-schizophrenia":		                {url:"$H/m/library/upload-file-form.html",Table:"fg-psgedf-schizophrenia",task_name:"Follow Up General - PSG EDF"},
         "fg-sleep-scoring-data-schizophrenia":		                {url:"$H/m/library/upload-file-data.html",Table:"fg-sleep-scoring-schizophrenia",form_module:"fg-sleep-scoring-form-schizophrenia",task_name:"Follow Up General - Sleep Scoring"},
