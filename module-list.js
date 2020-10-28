@@ -2,6 +2,11 @@
     var modules={
         "panel-main":    	        {url:"$H/m/panel-main.html",router:1},
         "panel-child":              {url:"$H/m/panel-child.html"},
+        "panel-export-screening":   {url:"$H/m/export/panel-export-screening.html",router:1},
+        "panel-export-baseline":    {url:"$H/m/export/panel-export-baseline.html",router:1},
+        "panel-export-followup":    {url:"$H/m/export/panel-export-followup.html",router:1},
+        "export-data": {url:"$H/m/export/export-data.html",Table:"schizophrenia-export",form_module:"export-form"},
+        "export-form": {url:"$H/m/export/export-form.html",Table:"schizophrenia-export"},
         
         "participant-data":   		        {url:"$H/m/participant/participant-data.html",Table:"participant-schizophrenia",form_module:"participant-form",router:1,
                                                 child_panel:"panel-child",
