@@ -26,16 +26,15 @@
 			<div class="col-sm" >
 				This task measures reaction time to colours and words.<br>
 				Three different coloured squares will be displayed at the bottom of the screen.<br>
-				<u><b>Click</b></u> on the coloured square that matches the <b>COLOUR</b> (red, blue or green) of the word above.<br><br>
+				<u><b>Click</b></u> on the coloured square that matches the <b>MEANING</b> (red, blue or green) of the word above.<br><br>
 				<p>Example</p>
-				<img src="__CURRENT_PATH__/image_col.jpg"  width="155" height="128"> <br><br></br>
-				<p><i><b>If<font color="#0000FF" > RED </font>appears you would select the <u>blue</u> box as shown</b></i></p>
+				<img src="__CURRENT_PATH__/image_txt.jpg"  width="155" height="128"> <br><br></br>
+				<p><i><b>If<font color="#FF0000" > GREEN </font>appears you would select the <u>green</u> box as shown</b></i></p>
 				Your responses will be timed.<br>
 				Accuracy is as important as speed in this task.<br>
 				To begin, please click on the <button id=start_button__ID class='btn btn-primary btn-lg'>Start</button> button.
 			</div>
 		</div>
-
 	</div>
 	<canvas id=main_canvas__ID width=600 height=300 style="margin: auto; display: block;"></canvas>
 </div>
@@ -52,11 +51,15 @@
 		var this_module=$vm.module_list[$vm.vm['__ID'].name];
 		//------------------------------------
 		$('#D__ID').on('load',function(){
-			$('#header').hide();
-			$('#footer').hide();
-			$('#participant_div__ID').hide()
-			$('#thirdparty_container__ID').css('height',$vm.min_height);
-			third_party("thirdparty_container__ID",data_process);
+			//$('#header').hide();
+			//$('#footer').hide();
+			//$('#participant_div__ID').hide()
+			//$('#thirdparty_container__ID').css('height',$vm.min_height);
+			//third_party("thirdparty_container__ID",data_process);
+			var xxx={}
+			xxx.IndivRT=""
+			xxx.Result=""
+			data_process(xxx)
 		})
 		//------------------------------------
         var calc=function(data){
@@ -120,6 +123,7 @@
 			$('#'+containerID).css('background-color','#ffffff');
 			var canvas = document.getElementById('main_canvas__ID');
 			var ctx = canvas.getContext('2d');
+			var names = ['RED', 'GREEN', 'BLUE'];
 			var colors = ['red', 'lime', 'blue'];
 			var pairs = [
 				['RED', 'lime'],['RED', 'blue'],
@@ -130,7 +134,6 @@
 			var timelimit = 45000;
 			//------------------------------------
 			var startTime;
-			//var StartTime;
 			var width = canvas.width;
 			var height = canvas.height;
 			var midX = width / 2;
@@ -141,11 +144,10 @@
 				IndivRT : [],
 				ShownColour : [],
 				ShownText : [],
-				ResponseColour : [],
+				ResponseText : [],
 				timelimit,
 				StartTime : ""
 			};
-
 			var rects = [];
 			ctx.clearRect(0, 0, width, height);
 			ctx.textAlign = 'center';
@@ -172,7 +174,7 @@
 					var halfSize = separation / 3;
 					var r =
 					{
-					x: x - halfSize, y: y - halfSize, width: halfSize * 2, height: halfSize * 2, color:colors[i]
+					x: x - halfSize, y: y - halfSize, width: halfSize * 2, height: halfSize * 2, color:colors[i], name:names[i]
 					}
 					rects.push(r);
 					ctx.rect(r.x, r.y, r.width, r.height);
@@ -200,8 +202,7 @@
 					results.ShownColour = results.ShownColour.join(",");
 					results.ShownColour = results.ShownColour.replace(/red/g,"RED").replace(/lime/g,"GREEN").replace(/blue/g,"BLUE");
 					results.ShownText = results.ShownText.join(",");
-					results.ResponseColour = results.ResponseColour.join(",");
-					results.ResponseColour = results.ResponseColour.replace(/red/g,"RED").replace(/lime/g,"GREEN").replace(/blue/g,"BLUE");
+					results.ResponseText = results.ResponseText.join(",");
 					callback(results);
 				}
 			}
@@ -229,11 +230,11 @@
 					var r = rects[i];
 					if (x > r.x && x < r.x + r.width && y > r.y && y < r.y + r.height)
 					{
-						results.Result.push(pair[1] == r.color ? 'C' : 'W');
+						results.Result.push(pair[0] == r.name ? 'C' : 'W');
 						results.IndivRT.push(Date.now() - startTime);
 						results.ShownColour.push(pair[1]);
 						results.ShownText.push(pair[0]);
-						results.ResponseColour.push(r.color);
+						results.ResponseText.push(r.name);
 						NextPair();
 					}
 				}
