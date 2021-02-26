@@ -1,0 +1,20 @@
+
+<section>
+    VmInclude:__CURRENT_PATH__/grid.v1h.html
+</section>
+<script>
+    function F__ID(){
+        //-------------------------------------
+        VmInclude:__COMPONENT__/g/grid.01.js
+        VmInclude:__CURRENT_PATH__/shared-data.js
+        //-------------------------------------
+        $('#title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name); //$('#title__ID').text('Anthropometry')
+        //-------------------------------------
+        var fields="visit_date,date_from,date_to,pressure,mask_type,ai,hi,ahi,cpap_days_under_4hrs_all,cpap_days_above_4hrs_all,cpap_days_total_all,cpap_not_used_all,cpap_days_over_all,percent_used_days_gtr_equal_4hrs,cpap_daily_use_average_all_correct,cpap_daily_use_median_all_correct,cpap_hours_all_days_all,cpap_ahi_median_wks2to14";
+        m.fields="_Form,_Status,_Notes,_Participant_ID,Participant,"+fields+",Submit_date,Submitted_by,_Delete";
+        //-------------------------------------
+    }
+</script>
+<style>
+    VmInclude:__COMPONENT__/g/grid.01.css
+</style>

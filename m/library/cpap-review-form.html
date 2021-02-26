@@ -8,7 +8,7 @@
                     <div class="col-12">
                         <!-- form start -->
                         <form id="F__ID">
-                            <h3 id="title__ID">Anthropometry - short</h3>
+                            <h3 id="title__ID"></h3>
                             <!-- participant part for all tsak forms -------------------->
                             <div id="participant_div__ID">
                                 <div class="form-group">
@@ -28,29 +28,56 @@
                                 <div class="questiongroup ">
                                     <fieldset class="">
                                         <div class=row>
-                                            <div class="col-sm-4"><label><span class="">Height</span><input type=number class=form-control name=Height></label></div>
-                                            <div class="col-sm-4"><label><span class="">Weight</span><input type=number class=form-control name=Weight></label></div>
-                                            <div class="col-sm-4"><label><span class="">Heart Rate</span><input type=number class=form-control name=Heart_Rate></label></div>
+                                            <div class="col-sm-3"><label><span class="">Visit Date</span><input type=date class=form-control name=visit_date></label></div>
+                                            <div class="col-sm-3"><label><span class="">Download date from</span><input type=date class=form-control name=date_from></label></div>
+                                            <div class="col-sm-3"><label><span class="">Download date to</span><input type=date class=form-control name=date_to></label></div>
+                                            <div class="col-sm-3"><label><span class="">Set Pressure</span><input type=number step=0.1 class=form-control name=pressure></label></div>
                                         </div>
                                     </fieldset>
                                 </div>
                             </div>
-                            <div class="form-group">PM measurement
+                            <div class="form-group">
                                 <div class="questiongroup ">
                                     <fieldset class="">
                                         <div class=row>
-                                                <div class="col-sm-4"><label><span class="">Systolic Blood Pressure</span><input type=number class=form-control name=Systolic_BP_PM></label></div>
-                                                <div class="col-sm-4"><label><span class="">Diastolic Blood Pressure</span><input type=number class=form-control name=Diastolic_BP_PM></label></div>
-                                            </div>
+                                            <div class="col-sm-3"><label><span class="">Mask Type</span><input type=text class=form-control name=mask_type></label></div>
+                                            <div class="col-sm-3"><label><span class="">Apnea Index</span><input type=number step=0.1 class=form-control name=ai></label></div>
+                                            <div class="col-sm-3"><label><span class="">Hyponea Index</span><input type=number step=0.1 class=form-control name=hi></label></div>
+                                            <div class="col-sm-3"><label><span class="">Apnea/Hypopnea Index</span><input type=number step=0.1 class=form-control name=ahi></label></div>
+                                        </div>
                                     </fieldset>
                                 </div>
                             </div>
-                            <div class="form-group">AM measurement
+                            <div class="form-group">
                                 <div class="questiongroup ">
                                     <fieldset class="">
                                         <div class=row>
-                                            <div class="col-sm-4"><label><span class="">Systolic Blood Pressure</span><input type=number class=form-control name=Systolic_BP_AM></label></div>
-                                            <div class="col-sm-4"><label><span class="">Diastolic Blood Pressure</span><input type=number class=form-control name=Diastolic_BP_AM></label></div>
+                                            <div class="col-sm-3"><label><span class="">CPAP Days Under 4hrs All</span><input type=number step=0.1 class=form-control name=cpap_days_under_4hrs_all></label></div>
+                                            <div class="col-sm-3"><label><span class="">CPAP Days Above 4hrs All</span><input type=number step=0.1 class=form-control name=cpap_days_above_4hrs_all></label></div>
+                                            <div class="col-sm-3"><label><span class="">CPAP Days Total All</span><input type=number step=0.1 class=form-control name=cpap_days_total_all></label></div>
+                                            <div class="col-sm-3"><label><span class="">CPAP Not Used All</span><input type=number step=0.1 class=form-control name=cpap_not_used_all></label></div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="questiongroup ">
+                                    <fieldset class="">
+                                        <div class=row>
+                                            <div class="col-sm-3"><label><span class="">CPAP Days Over All</span><input type=number step=0.1 class=form-control name=cpap_days_over_all></label></div>
+                                            <div class="col-sm-3"><label><span class="">Percent Used Days Gtr Equal 4hrs</span><input type=number step=0.1 class=form-control name=percent_used_days_gtr_equal_4hrs></label></div>
+                                            <div class="col-sm-3"><label><span class="">CPAP Daily Use Average All Correct</span><input type=number step=0.1 class=form-control name=cpap_daily_use_average_all_correct></label></div>
+                                            <div class="col-sm-3"><label><span class="">CPAP Daily Use Median All Correct</span><input type=number step=0.1 class=form-control name=cpap_daily_use_median_all_correct></label></div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="questiongroup ">
+                                    <fieldset class="">
+                                        <div class=row>
+                                            <div class="col-sm-3"><label><span class="">CPAP Hours All Days All</span><input type=number step=0.1 class=form-control name=cpap_hours_all_days_all></label></div>
+                                            <div class="col-sm-3"><label><span class="">CPAP AHI Median wks2to14</span><input step=0.1 type=number step=0.1 class=form-control name=cpap_ahi_median_wks2to14></label></div>
                                         </div>
                                     </fieldset>
                                 </div>

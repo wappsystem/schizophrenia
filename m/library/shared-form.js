@@ -32,6 +32,7 @@ var I=0; var loop_1=setInterval(function (){
 var load=m.load;
 m.load=function(){
     load();
+    $('#title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name);
     if($vm.online_questionnaire==1) {
         $('#pdf__ID').hide();
         $('#participant_div__ID').hide();
