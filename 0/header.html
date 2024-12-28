@@ -27,9 +27,12 @@
                     <a href="?/panel-export-followup">Export Follow-up</a>
                 </div>
             </div>
-            <a href="https://backoffice.wappsystem.com.au"><i class="fas fa-key"></i> Backoffice</a>
+            <!--<a href="https://backoffice.wappsystem.com.au"><i class="fas fa-key"></i> Backoffice</a>
             <a id=vm_signin onclick="$vm.signin();"><i class="fas fa-user"></i> Sign In</a>
-            <a class=vm-hide id=vm_signout onclick=$vm.signout()><i class="fas fa-user"></i> Sign Out</a>
+            <a class=vm-hide id=vm_signout onclick=$vm.signout()><i class="fas fa-user"></i> Sign Out</a>-->
+            <a href="" id=signin__ID onclick=$vm.auth_signin(); ><i class="fa fa-user"></i> Sign in</a>
+            <a href="" id=signout__ID onclick=$vm.auth_signout(); ><i class="fa fa-user"></i> Sign out</a>
+
     </div>
         <!---------->
     </div>
@@ -68,6 +71,20 @@
             if(href=='home') prefix="";
             $vm.load_module(prefix+href,$vm.root_layout_content_slot,{});
         }
+        //---------------------------------------------------------------
+        $vm.show_user=function(){
+            if($vm.user_name==undefined || $vm.user_name=='guest'){
+                $('#username__ID').text('');
+                $('#signin__ID').show();
+                $('#signout__ID').hide();
+            }
+            else{
+                $('#username__ID').text('Signed in as '+ $vm.user_name);
+                $('#signin__ID').hide();
+                $('#signout__ID').show();
+            }
+        }
+
         //------------------------------------
         $vm.header_ready=1;
         //------------------------------------
