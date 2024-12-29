@@ -65,6 +65,7 @@
                     $('#vm_username').text('Signed in as '+res.sys.username);
                     var x = document.getElementById("vm_signout");
                     x.className="";
+                    console.log("A: "+m.questionnaire_panel)
                     $vm.load_module(m.questionnaire_panel,'',{record:res.result});
                 }
                 else{
